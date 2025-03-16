@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gerador de Poemas</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>❤️</text></svg>">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Georgia', serif;
+      background: linear-gradient(135deg, #ffd1dc, #f9e0e7);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+      color: #4a004e;
+    }
+
+    .container {
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      max-width: 600px;
+      width: 90%;
+      transition: transform 0.3s ease;
+    }
+
+    .container:hover {
+      transform: scale(1.02);
+    }
+
+    h1 {
+      margin-bottom: 20px;
+      font-size: 2.5em;
+      color: #d6336c;
+    }
+
+    p {
+      font-size: 1.3em;
+      line-height: 1.7;
+      white-space: pre-line;
+    }
+
+    button {
+      margin-top: 30px;
+      padding: 15px 30px;
+      font-size: 1.2em;
+      border: none;
+      border-radius: 30px;
+      background: linear-gradient(135deg, #ff85a2, #ff3d7b);
+      color: white;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s ease;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    button:hover {
+      background: linear-gradient(135deg, #ff3d7b, #ff85a2);
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <h1>✨ Gerador de Poemas ✨</h1>
+    <p id="poema">Clique no botão para ler um poema 💖</p>
+    <button onclick="gerarPoema()">Gerar Poema</button>
+  </div>
+
+  <script>
+    const poemas = [
+      "No silêncio da noite calma,\nA lua beija o mar em paz.\nEstrelas bordam o céu com alma,\nE o tempo, sereno, se desfaz.",
+      "As flores dançam com o vento,\nEm um balé de cor e amor.\nCada pétala guarda o momento,\nDe um sonho que se encantou.",
+      "Chuva cai na janela, mansa,\nLavando a alma a chorar.\nNa esperança que a vida alcança,\nUm novo sol a brilhar.",
+      "O amor é chama que aquece,\nMesmo quando o frio vem.\nÉ um rio que nunca esquece,\nDe seguir o seu além.",
+      "Entre montanhas e vales, sigo,\nBuscando o que é meu lugar.\nNa natureza, encontro abrigo,\nE aprendo a recomeçar.",
+      "O vento leva as folhas caídas,\nSussurrando segredos do chão.\nMemórias de vidas vividas,\nGuardadas no coração.",
+      "No horizonte, o sol se esconde,\nPintando o céu de laranja e azul.\nO dia parte, o sonho responde,\nE a noite veste seu véu de tule.",
+      "Debaixo da chuva fina,\nEncontro abrigo em mim.\nA esperança se ilumina,\nComo o sol depois do fim.",
+      "O rio canta entre as pedras,\nHistórias de amor e dor.\nSegue em frente, quebra as regras,\nLeva embora o que passou.",
+      "Em cada estrela que nasce,\nUm desejo se refaz.\nO universo nunca cansa,\nDe criar beleza e paz.",
+      "Na estrada da vida sigo,\nEntre curvas, flores e espinhos.\nCada passo é um abrigo,\nCada dor, novos caminhos.",
+      "A noite acende suas velas,\nNa janela da imensidão.\nE as estrelas, sentinelas,\nGuardam sonhos na escuridão.",
+      "Canta o passarinho livre,\nNo galho que o vento embala.\nA vida é breve, mas vive,\nNo canto que nunca cala.",
+      "O mar, espelho de prata,\nReflete o céu e o luar.\nEntre as ondas se retrata,\nA vontade de sonhar.",
+      "Gira o mundo em seu compasso,\nSem parar, sem descansar.\nE nós, nesse abraço,\nTentando o tempo alcançar."
+    ];
+
+
+    function gerarPoema() {
+      const index = Math.floor(Math.random() * poemas.length);
+      const poema = poemas[index].replace(/\n/g, '<br>');
+      document.getElementById('poema').innerHTML = poema;
+    }
+  </script>
+
+</body>
+
+</html>
